@@ -11,19 +11,15 @@ const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 4000;
 const uri = process.env.MONGO_URL;
 
 // ------------------ MIDDLEWARE ------------------
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
-    credentials: true,
-  })
-);
+app.use(cors());
+
 
 // ------------------ USER MODEL ------------------
 
